@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-import { CastItem } from './CastItem/CastItem';
+import CastItem from './CastItem/CastItem';
 import { castMovie } from 'components/api/requests';
 
 const Cast = () => {
@@ -33,4 +33,5 @@ const Cast = () => {
     </ul>
   );
 };
+
 export default Cast;

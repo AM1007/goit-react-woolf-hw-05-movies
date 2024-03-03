@@ -2,7 +2,9 @@ import { Suspense, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 
 import { fetchMovie } from 'components/api/requests';
-import { CastAndReviews } from 'components/CastAndReviews/CastAndReviews';
+
+import CastAndReviews from 'components/CastAndReviews/CastAndReviews';
+import Loader from 'components/Loader/Loader';
 
 import {
   Container,
@@ -60,7 +62,7 @@ const MovieDetails = () => {
       </Container>
       <div>
         <CastAndReviews movieId={movieId} />
-        <Suspense>
+        <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
       </div>

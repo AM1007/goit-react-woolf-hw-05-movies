@@ -1,7 +1,7 @@
 import placeholder from '../../../images/placeholder.png';
 import { Img } from './CastItemStyled';
 
-export const CastItem = ({ name, profile, character }) => {
+const CastItem = ({ name, profile, character }) => {
   return (
     <li>
       <Img
@@ -15,3 +15,5 @@ export const CastItem = ({ name, profile, character }) => {
     </li>
   );
 };
+
+export default CastItem;

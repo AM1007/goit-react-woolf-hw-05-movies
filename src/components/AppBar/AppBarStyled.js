@@ -6,7 +6,7 @@ export const Header = styled.header`
   gap: 20px;
   margin: 0px auto;
   padding: 20px;
-  border-bottom: solid;
+  border-bottom: 1px solid;
 `;
 export const NavItem = styled(NavLink)`
   display: block;

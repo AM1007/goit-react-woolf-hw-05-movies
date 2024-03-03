@@ -1,10 +1,22 @@
-import { MoviesList } from './MoviesList/MoviesList';
+import MoviesList from 'components/MoviesList/MoviesList';
+import apiWeekMovies from 'components/api/requests';
+import { useState, useEffect } from 'react';
 
-export const Home = () => {
+const Home = () => {
+  const [movies, setMovies] = useState([]);
+
+  useEffect(() => {
+    apiWeekMovies.fetchDataWeek().then(({ results }) => {
+      setMovies(results);
+    });
+  }, []);
+
   return (
-    <main>
+    <>
       <h1>Trends of the week</h1>
-      <MoviesList />
-    </main>
+      <MoviesList movies={movies} />
+    </>
   );
 };
+
+export default Home;

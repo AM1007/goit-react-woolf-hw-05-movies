@@ -5,7 +5,7 @@ const navItem = [
   { href: 'movies', text: 'Movies' },
 ];
 
-export const AppBar = () => {
+const AppBar = () => {
   return (
     <Header>
       {navItem.map(({ href, text }) => (
@@ -16,3 +16,5 @@ export const AppBar = () => {
     </Header>
   );
 };
+
+export default AppBar;

@@ -2,7 +2,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 import { Container } from './CastAndReviewsStyled';
 
-export const CastAndReviews = ({ movieId }) => {
+const CastAndReviews = ({ movieId }) => {
   const navItem = [
     { href: `/movies/${movieId}/cast`, text: 'Cast' },
     { href: `/movies/${movieId}/reviews`, text: 'Reviews' },
@@ -26,3 +26,5 @@ export const CastAndReviews = ({ movieId }) => {
     </Container>
   );
 };
+
+export default CastAndReviews;

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 import { Input } from './SearchMoviesStyled';
 
-export const SearchMovie = ({ onSubmit }) => {
+const SearchMovie = ({ onSubmit }) => {
   const [search, setSearch] = useState('');
 
   const handleChange = e => {
@@ -33,3 +33,5 @@ export const SearchMovie = ({ onSubmit }) => {
     </form>
   );
 };
+
+export default SearchMovie;

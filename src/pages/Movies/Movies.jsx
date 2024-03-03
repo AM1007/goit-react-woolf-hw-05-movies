@@ -1,9 +1,10 @@
-import { Suspense, useEffect, useState } from 'react';
-import { Outlet, useSearchParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
-import { SearchMovie } from '../../components/SearchMovies/SearchMovies';
 import { searchMovie } from 'components/api/requests';
-import { MoviesItem } from './MuviesItem/MuviesItem';
+
+import SearchMovie from '../../components/SearchMovies/SearchMovies';
+import MoviesItem from './MuviesItem/MuviesItem';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
@@ -33,9 +34,6 @@ const Movies = () => {
           movies.map(({ original_title, id }) => (
             <MoviesItem title={original_title} id={id} key={id} />
           ))}
-        <Suspense>
-          <Outlet />
-        </Suspense>
       </ul>
     </div>
   );

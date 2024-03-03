@@ -1,4 +1,4 @@
-export const ReviewsItem = ({ author, content }) => {
+const ReviewsItem = ({ author, content }) => {
   return (
     <li>
       <h2>Author: {author}</h2>
@@ -6,3 +6,5 @@ export const ReviewsItem = ({ author, content }) => {
     </li>
   );
 };
+
+export default ReviewsItem;
