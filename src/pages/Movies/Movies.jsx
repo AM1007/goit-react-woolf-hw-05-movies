@@ -1,13 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
-import { searchMovie } from 'components/api/requests';
+import { searchMovie } from '../../api/requests';
 
 import SearchMovie from '../../components/SearchMovies/SearchMovies';
-import MoviesItem from './MuviesItem/MuviesItem';
+import MoviesList from 'components/MoviesList/MoviesList';
 
 const Movies = () => {
   const [movies, setMovies] = useState([]);
+
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
 
@@ -29,12 +30,7 @@ const Movies = () => {
   return (
     <div>
       <SearchMovie onSubmit={formSubmit} />
-      <ul>
-        {movies.length > 0 &&
-          movies.map(({ original_title, id }) => (
-            <MoviesItem title={original_title} id={id} key={id} />
-          ))}
-      </ul>
+      {movies.length > 0 && <MoviesList movies={movies} />}
     </div>
   );
 };

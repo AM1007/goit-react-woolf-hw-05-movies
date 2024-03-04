@@ -6,11 +6,11 @@ const Loader = () => {
     <Container>
       <RotatingLines
         visible={true}
-        height="96"
-        width="96"
-        color="grey"
-        strokeWidth="5"
-        animationDuration="0.75"
+        height="72"
+        width="72"
+        color="#0d253f"
+        strokeWidth="4"
+        animationDuration="1.75"
         ariaLabel="rotating-lines-loading"
         wrapperStyle={{}}
         wrapperClass=""

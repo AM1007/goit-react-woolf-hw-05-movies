@@ -1,4 +1,4 @@
-import placeholder from '../../../images/placeholder.png';
+import placeholder from '../../../images/no_img.png';
 import { Img } from './CastItemStyled';
 
 const CastItem = ({ name, profile, character }) => {

@@ -1,7 +1,8 @@
 import { Suspense, useEffect, useState } from 'react';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router-dom';
 
-import { fetchMovie } from 'components/api/requests';
+import { fetchMovie } from '../../api/requests';
+import placeholder from '../../images/no_img.png';
 
 import CastAndReviews from 'components/CastAndReviews/CastAndReviews';
 import Loader from 'components/Loader/Loader';
@@ -35,6 +36,15 @@ const MovieDetails = () => {
     return;
   }
 
+  const {
+    poster_path,
+    original_title,
+    release_date,
+    vote_average,
+    overview,
+    genres,
+  } = movie;
+
   return (
     <div>
       <button type="button" onClick={goBack}>
@@ -42,19 +52,23 @@ const MovieDetails = () => {
       </button>
       <Container>
         <Img
-          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+          src={
+            poster_path
+              ? `https://image.tmdb.org/t/p/w500/${poster_path}`
+              : placeholder
+          }
           alt=""
         />
         <ContainerInfo>
           <h1>
-            {movie.original_title} ({movie.release_date.slice(0, 4)})
+            {original_title} ({release_date.slice(0, 4)})
           </h1>
-          <p>User Score: {Number.parseInt(movie.vote_average * 10)} %</p>
+          <p>User Score: {Number.parseInt(vote_average * 10)} %</p>
           <h2>Overview</h2>
-          <p>{movie.overview}</p>
+          <p>{overview}</p>
           <h2>Genres</h2>
           <GenreList>
-            {movie.genres.map(({ id, name }) => (
+            {genres.map(({ id, name }) => (
               <GenreItem key={id}>{name}</GenreItem>
             ))}
           </GenreList>

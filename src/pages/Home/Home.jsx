@@ -1,5 +1,5 @@
 import MoviesList from 'components/MoviesList/MoviesList';
-import apiWeekMovies from 'components/api/requests';
+import apiWeekMovies from '../../api/requests';
 import { useState, useEffect } from 'react';
 
 const Home = () => {
