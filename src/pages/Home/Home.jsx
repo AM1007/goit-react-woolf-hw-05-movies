@@ -1,6 +1,7 @@
 import MoviesList from 'components/MoviesList/MoviesList';
 import apiWeekMovies from '../../api/requests';
 import { useState, useEffect } from 'react';
+import { Title } from './Home.styled';
 
 const Home = () => {
   const [movies, setMovies] = useState([]);
@@ -13,7 +14,7 @@ const Home = () => {
 
   return (
     <>
-      <h1>Trends of the week</h1>
+      <Title>Trends of the week</Title>
       <MoviesList movies={movies} />
     </>
   );

@@ -20,7 +20,7 @@ const SearchMovie = ({ onSubmit }) => {
   return (
     <form onSubmit={handleSubmit}>
       <Input
-        placeholder="Batman"
+        placeholder="Search for a movie..."
         type="text"
         name="name"
         title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
